@@ -17,27 +17,27 @@ try:  # på börjar kollar om balance.txt existerar
             balance = 0.0 # resetar till balance = 0.0
 except: (FileNotFoundError) #Om filen inte hittas ska det
 balance = 0.0 
-menu = 0
+menu = 0 # tillderalr menu att vara värde 0
 # insättning
 # utttag
 # avslutning
-while menu != 3:
+while menu != 3: # medans menu är inte lika med 3
     print("Ditt saldo är: ", balance)
-    menu = int(input("Skriv ditt val[1 insättning, 2 utaggning, 3 avsluta]: "))
+    menu = int(input("Skriv ditt val[1 insättning, 2 utaggning, 3 avsluta]: ")) #ger val till 3 olika menu
     
-    if menu == 1:
-        print("insättning..")
-        print("\v")
-        balance = balance + float(input("sätt in dina pengar: "))
+    if menu == 1: #it satas för menu 1 
+        print("insättning..") # start text
+        print("\v") # lägger till en blank rad
+        balance = balance + float(input("sätt in dina pengar: ")) #ger input för float värde
         
     elif menu == 2:
         print("utaggning...")
         print("\v")
-        if balance <= 0:
+        if balance <= 0: #om värde mindre lika med 0 ska du få  medelande om pengar räcker inte till. Negativa  tal ska ge samma felmedellande och att krister ska inte ta ut pengerna
             print("Du kan inte ta ut dina pengar")
         
         elif balance >= 0:
-            balance = balance - float(input("ta ut dina pengar: "))
+            balance = balance - float(input("ta ut dina pengar: ")) # om du har pengar att ta ut så ska du kunna ta ut mer vad du har
 
 
     elif menu == 3:
